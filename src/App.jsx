@@ -1,10 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+// ============================================================
+//  DeployFi — App.jsx
+//  File: src/App.jsx
+// ============================================================
 
-function HomePage()      { return <div style={{color:'white', padding:40}}>Home Page</div> }
-function LaunchPage()    { return <div style={{color:'white', padding:40}}>Launch Page</div> }
-function DeFiPage()      { return <div style={{color:'white', padding:40}}>DeFi Page</div> }
-function DashboardPage() { return <div style={{color:'white', padding:40}}>Dashboard Page</div> }
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Pages
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import LaunchPage from './pages/LaunchPage';
+import DeFiPage from './pages/DeFiPage';
+import DashboardPage from './pages/DashboardPage';
 
 export default function App() {
   return (
