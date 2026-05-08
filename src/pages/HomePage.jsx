@@ -6,6 +6,7 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const STATS = [
   { label: "Total Value Locked", value: "$14,208,392.12" },
@@ -91,28 +92,29 @@ export default function HomePage() {
       </div>
 
       {/* FEATURES */}
-      <div style={{ padding: "0 32px 80px", maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 16 }}>
-          {FEATURES.map((f, i) => <FeatureCard key={i} {...f} />)}
-        </div>
-      </div>
-
-      {/* HOW IT WORKS */}
       <div style={{ padding: "60px 32px 80px", textAlign: "center" }}>
-        <div style={{ fontSize: 32, fontWeight: 700, color: "#fff", marginBottom: 60, letterSpacing: "-0.5px" }}>How It Works</div>
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", maxWidth: 700, margin: "0 auto", flexWrap: "wrap" }}>
-          {STEPS.map((step, i) => (
-            <>
-              <div key={step.num} style={{ textAlign: "center", width: 160 }}>
-                <div style={{ width: 48, height: 48, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 600, color: "#fff", margin: "0 auto 16px" }}>{step.num}</div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "#fff", marginBottom: 6 }}>{step.title}</div>
-                <div style={{ fontSize: 11, color: "#6B7280", lineHeight: 1.5 }}>{step.desc}</div>
-              </div>
-              {i < STEPS.length - 1 && <div key={`d${i}`} style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.15)", minWidth: 60, maxWidth: 100, margin: "0 8px", marginBottom: 40 }} />}
-            </>
-          ))}
+  <div style={{ fontSize: 32, fontWeight: 700, color: "#fff", marginBottom: 60, letterSpacing: "-0.5px" }}>How It Works</div>
+  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", maxWidth: 700, margin: "0 auto", flexWrap: "wrap" }}>
+    {STEPS.map((step, i) => (
+      <React.Fragment key={step.num}>
+        <div style={{ textAlign: "center", width: 160 }}>
+          <div style={{ width: 48, height: 48, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 600, color: "#fff", margin: "0 auto 16px" }}>
+            {step.num}
+          </div>
+          <div style={{ fontSize: 14, fontWeight: 600, color: "#fff", marginBottom: 6 }}>
+            {step.title}
+          </div>
+          <div style={{ fontSize: 11, color: "#6B7280", lineHeight: 1.5 }}>
+            {step.desc}
+          </div>
         </div>
-      </div>
+        {i < STEPS.length - 1 && (
+          <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.15)", minWidth: 60, maxWidth: 100, margin: "0 8px", marginBottom: 40 }} />
+        )}
+      </React.Fragment>
+    ))}
+  </div>
+</div>
 
       {/* PARTNERS */}
       <div style={{ padding: "40px 32px 80px", display: "flex", justifyContent: "center", alignItems: "center", gap: 48, flexWrap: "wrap", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>

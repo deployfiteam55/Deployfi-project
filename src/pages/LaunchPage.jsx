@@ -41,7 +41,7 @@ export default function LaunchPage() {
 
   const [form, setForm] = useState({
     name: "", symbol: "", supply: "1,000,000",
-    price: "0.001", description: "", image: null,
+    price: "0.001", description: "",
   });
   const [launching, setLaunching] = useState(false);
   const [launched,  setLaunched]  = useState(false);
@@ -131,21 +131,7 @@ export default function LaunchPage() {
             />
           </div>
 
-          {/* Image Upload */}
-          <div style={{ marginBottom: 24 }}>
-            <label style={{ fontSize: 11, color: "#9CA3AF", display: "block", marginBottom: 6 }}>Image Upload</label>
-            <div style={{
-              border: "1px dashed rgba(124,58,237,0.35)",
-              borderRadius: 10, padding: "28px 16px",
-              textAlign: "center", cursor: "pointer",
-              background: "rgba(124,58,237,0.04)",
-            }}>
-              <div style={{ fontSize: 24, marginBottom: 8 }}>📁</div>
-              <div style={{ fontSize: 12, color: "#9CA3AF", marginBottom: 4 }}>Drag and drop or click to upload token logo</div>
-              <div style={{ fontSize: 10, color: "#4B5563" }}>PNG, JPG, SVG (Max 5MB)</div>
-            </div>
-          </div>
-
+          
           {/* Launch Button */}
           <button
             onClick={handleLaunch}
